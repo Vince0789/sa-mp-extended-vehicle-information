@@ -253,7 +253,7 @@ public GetVehicleModelInfoAsInt(vehiclemodel, infotype[])
 	    sqlquery[80],
 	    DBResult:qresult;
 
-	format(sqlquery, sizeof(sqlquery), "SELECT `%s` FROM `vehicle_main` WHERE `id` = '%d'", infotype, vehiclemodel);
+	format(sqlquery, sizeof(sqlquery), "SELECT `%q` FROM `vehicle_main` WHERE `id` = %d", infotype, vehiclemodel);
 	qresult = db_query(dbfile, sqlquery);
 	
 	db_get_field(qresult, 0, sqlquery, sizeof(sqlquery));
@@ -271,7 +271,7 @@ public Float:GetVehicleModelInfoAsFloat(vehiclemodel, infotype[])
 	    sqlquery[100],
 	    DBResult:qresult;
 
-	format(sqlquery, sizeof(sqlquery), "SELECT `%s` FROM `vehicle_main` WHERE `id` = '%d'", infotype, vehiclemodel);
+	format(sqlquery, sizeof(sqlquery), "SELECT `%q` FROM `vehicle_main` WHERE `id` = %d", infotype, vehiclemodel);
 	qresult = db_query(dbfile, sqlquery);
 
 	db_get_field(qresult, 0, sqlquery, sizeof(sqlquery));
